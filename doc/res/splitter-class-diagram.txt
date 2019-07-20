@@ -1,0 +1,54 @@
+@startuml
+
+package "pruvi.splitters" {
+  class BaseSplitter {
+    -__parts
+    +tree
+    +__init__()
+    #_export_proofs()
+    #_export_tree()
+    #_write_parts()
+    +create_tree()
+    +export()
+    +export_tree()
+    +get_parts()
+    +set_parts()
+    +verify_file()
+    +verify_proof()
+  }
+
+  class FileSplitter {
+    +file_path
+    +__init__()
+    #_get_file_path()
+    {abstract} +split_document()
+  }
+
+  class AudioFileSplitter {
+    +split_document()
+  }
+
+  class BinaryFileSplitter {
+    +split_document()
+  }
+
+  class PDFFileSplitter {
+    +split_document()
+  }
+
+  class TextFileSplitter {
+    +split_document()
+  }
+
+  class TextSplitter {
+    +split_document()
+  }
+}
+
+BaseSplitter <|-- FileSplitter
+FileSplitter <|-- AudioFileSplitter
+FileSplitter <|-- BinaryFileSplitter
+FileSplitter <|-- PDFFileSplitter
+FileSplitter <|-- TextFileSplitter
+BaseSplitter <|-- TextSplitter
+@enduml

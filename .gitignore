@@ -1,0 +1,7 @@
+examples*
+*egg*
+*pyc
+*~
+*_pycache_*
+*dist
+
