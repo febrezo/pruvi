@@ -38,9 +38,6 @@ setup(
     },
     install_requires=[
         'pydub',
-        'pymerkle',
-    ],
-    dependency_links=[
-        'git+git://github.com/febrezo/pymerkle/@pure-byte-hashing#egg=pymerkle'
-    ],
+        'pymerkle>=5.0'
+    ]
 )
